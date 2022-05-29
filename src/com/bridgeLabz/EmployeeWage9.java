@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class EmployeeWage9 {
 
+    private static final double IS_PART_TIME = 1;
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program on Master Branch");
 
@@ -16,12 +17,15 @@ public class EmployeeWage9 {
         Random random = new Random();
         int employeeCheck = random.nextInt(2);
 
-        if (employeeCheck == IS_FULL_TIME)
+
+        if (employeeCheck == IS_PART_TIME)
+            empHrs = 4;
+        else if (employeeCheck == IS_FULL_TIME)
             empHrs = 8;
         else
             empHrs = 0;
         empWage = empHrs * EMP_RATE_PER_HOUR;
-        System.out.println("Employee wage : "+empWage);
+        System.out.println("Employee wage : "+empWage);;
         }
     }
 
