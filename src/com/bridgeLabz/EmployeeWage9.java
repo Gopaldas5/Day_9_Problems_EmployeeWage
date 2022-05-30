@@ -10,8 +10,8 @@ public class EmployeeWage9 {
     public static final int NUM_OF_WORKING_DAYS = 2;
     public static final int MAX_HRS_IN_MONTH = 10;
 
-    public static void main(String[] args) {
-        System.out.println("Welcome to Employee Wage Computation Program on Master Branch");
+    public static int computeEmployee(){
+
         Random random = new Random();
         int empHrs = 0;
         int totalWorkingDays = 0;
@@ -19,17 +19,28 @@ public class EmployeeWage9 {
 
         while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
             totalWorkingDays++;
-            int employeeCheck = random.nextInt(2);
-            empHrs = switch (employeeCheck) {
-                case IS_PART_TIME -> 4;
-                case IS_FULL_TIME -> 8;
-                default -> 0;
-            };
+            int employeeCheck = random.nextInt(4);
+             switch (employeeCheck) {
+                 case IS_PART_TIME:
+                    empHrs = 4;
+                    break;
+                 case IS_FULL_TIME:
+                     empHrs = 8;
+                     break;
+                 default:
+                     empHrs = 0;
+            }
             totalEmpHrs += empHrs;
-            System.out.println("Working days: " + totalWorkingDays + "Employee working hours: " + empHrs);
+            System.out.println("Working days:- "+ totalWorkingDays + " === Employee working hours:- " + empHrs);
         }
         int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
         System.out.println("Total Employee wage : " + totalEmpWage);
+        return totalEmpWage;
+    }
+    public static void main(String[] args) {
+        System.out.println("Welcome to Employee Wage Computation Program on Master Branch");
+        computeEmployee();
+
     }
 }
 
