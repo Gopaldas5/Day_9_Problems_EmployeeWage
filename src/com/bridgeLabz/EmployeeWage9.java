@@ -22,7 +22,7 @@ public class EmployeeWage9 {
             default -> 0;
         };
         empWage = empHrs * EMP_RATE_PER_HOUR;
-        System.out.println("Employee wage : "+empWage);;
+        System.out.println("Employee wage : "+empWage);
         }
     }
 
