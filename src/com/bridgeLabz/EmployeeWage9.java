@@ -10,40 +10,42 @@ public class EmployeeWage9 {
 //    public static final int NUM_OF_WORKING_DAYS = 2;
 //    public static final int MAX_HRS_IN_MONTH = 10;
 
-    public static int computeEmployee(String company, int emp_Rate_Per_Hour, int num_Of_Working_Days, int max_Hours_In_Month)
-    {
+    public static void computeEmployee(String company, int emp_Rate_Per_Hour, int num_Of_Working_Days, int max_Hours_In_Month) {
         Random random = new Random();
         int empHrs = 0;
         int totalWorkingDays = 0;
         int totalEmpHrs = 0;
+        System.out.println("Company name :- "+company);
 
         while (totalEmpHrs <= max_Hours_In_Month && totalWorkingDays < num_Of_Working_Days) {
             totalWorkingDays++;
             int employeeCheck = random.nextInt(4);
-             switch (employeeCheck) {
-                 case IS_PART_TIME:
+            switch (employeeCheck) {
+                case IS_PART_TIME:
                     empHrs = 4;
                     break;
-                 case IS_FULL_TIME:
-                     empHrs = 8;
-                     break;
-                 default:
-                     empHrs = 0;
+                case IS_FULL_TIME:
+                    empHrs = 8;
+                    break;
+                default:
+                    empHrs = 0;
             }
             totalEmpHrs += empHrs;
-            System.out.println("Working days:- "+ totalWorkingDays + " === Employee working hours:- " + empHrs);
+            System.out.println("Working days:- " + totalWorkingDays + " === Employee working hours:- " + empHrs);
         }
         int totalEmpWage = totalEmpHrs * emp_Rate_Per_Hour;
         System.out.println("Total Employee wage : " + totalEmpWage);
-        return totalEmpWage;
     }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program on Master Branch");
-        computeEmployee("TCS", 20, 2,10);
-        computeEmployee("BridgeLabz",10, 4,20);
-        computeEmployee("ITC",30,5, 30);
+        computeEmployee("TCS", 20, 2, 10);
+        computeEmployee("BridgeLabz", 10, 4, 20);
+        computeEmployee("ITC", 30, 5, 30);
+        computeEmployee("Amazon", 40, 3, 10);
 
     }
+
 }
 
 
