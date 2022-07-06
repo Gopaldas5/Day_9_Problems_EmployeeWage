@@ -39,9 +39,9 @@ public class EmployeeWage9 {
     }
     public static void main(String[] args) {
         System.out.println("Welcome to Employee Wage Computation Program on Master Branch");
-        computeEmployee("TCS", 20, 2,10);
-        computeEmployee("BridgeLabz",10, 4,20);
-        computeEmployee("ITC",30,5, 30);
+        computeEmployee("TCS", 20, 2, 10);
+        computeEmployee("BridgeLabz", 10, 4, 20);
+        computeEmployee("ITC", 30, 5, 30);
 
     }
 }
